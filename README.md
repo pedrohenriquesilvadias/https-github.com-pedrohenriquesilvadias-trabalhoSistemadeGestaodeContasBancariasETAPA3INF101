@@ -1,6 +1,9 @@
 Trabalho Sistema Bancário Etapa 3;
+
 Pedro Henrique Silva Dias-28780;
+
 Disciplina: INF-101 Programação de Computadores I;
+
 Link de acesso: [trabalho-etapa-3-sistema-bancario.zip](https://github.com/user-attachments/files/35413663/trabalho-etapa-3-sistema-bancario.zip);
 
 Neste trabalho, descobri que deve se declarar as variáveis com arrays MAX_CONTAS E MAX_MOVIMENTAÇÕES da etapa 2 e as variáveis da etapa 3 o void salvar
