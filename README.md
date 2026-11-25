@@ -23,11 +23,11 @@ Primeiro digita o nome, cpf, número de conta... e faz saques, transferências e
 
 Na terceira etapa, ao optar 8 e confirmar, abre uma nova aba do online GDB, com os dados dos bancários e seus dados pessoais gravados.
 
-#include<iostream>
+#includeiostream
 
-#include<fstream>
+#includefstream
 
-#include<string>
+#includestring
 
 using namespace std;
 
