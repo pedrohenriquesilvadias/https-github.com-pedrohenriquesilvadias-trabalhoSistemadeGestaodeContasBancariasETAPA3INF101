@@ -25,7 +25,7 @@ Primeiro digita o nome, cpf, número de conta... e faz saques, transferências e
 
 Na terceira etapa, ao optar 8 e confirmar, abre uma nova aba do online GDB, com os dados dos bancários e seus dados pessoais gravados.
 
-//Foi necessário a remoção das setinhas no iostream, fstream e string pois eles não apareciam na aba visualizar.
+*Foi necessário a remoção das setinhas no iostream, fstream e string pois eles não apareciam na aba visualizar.
 
 #include iostream
 
