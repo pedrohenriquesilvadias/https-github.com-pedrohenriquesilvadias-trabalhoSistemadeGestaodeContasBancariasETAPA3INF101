@@ -454,6 +454,3 @@ int main() {
     
     return 0;
 }
-
-- Neste trabalho, descobri que deve se declarar as variáveis com arrays MAX_CONTAS E MAX_MOVIMENTAÇÕES da etapa 2 e as variáveis da etapa 3 o void salvar
-contas e movimentações na qual foi usado o "ifstream" no
