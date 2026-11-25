@@ -111,18 +111,31 @@ void carregarContas() {
 }
 
 void salvarContas() {
+    
     ofstream arquivo("contas.txt");
+    
     if (arquivo.is_open()) {
+        
         for (int i = 0; i < quantidadeContas; i++) {
+            
             arquivo << numeroConta[i] << ";"
+                    
                     << nomeCliente[i] << ";"
+                    
                     << cpf[i] << ";"
+                    
                     << tipoConta[i] << ";"
+                    
                     << saldo[i] << ";"
+                    
                     << contaAtiva[i] << endl;
+        
         }
+        
         arquivo.close();
+    
     }
+
 }
 
 void carregarMovimentacoes() {
