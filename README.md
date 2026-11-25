@@ -139,9 +139,13 @@ void salvarContas() {
 }
 
 void carregarMovimentacoes() {
+    
     ifstream arquivo("movimentacoes.txt");
+    
     if (!arquivo.is_open()) {
+        
         return;
+    
     }
 
     quantidadeMovimentacoes = 0;
