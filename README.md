@@ -12,7 +12,7 @@ saldo[quantidadeContas] = stod(temp);
 Na Etapa 2, a missão necessária era, cadastrar contas, listar contas cadastradas, consultar contas, realizar depósitos, saques transferências, e exibir
 o extrato.
 Primeiro digita o nome, cpf, número de conta... e faz saques, transferências e diversas coisas até escolher sair.
-Na terceira etapa,  
+Na terceira etapa, ao optar 8 e confirmar, abre uma nova aba do online GDB, com os dados dos bancários e seus dados pessoais gravados.
 
 #include <iostream>
 #include <fstream>
