@@ -34,49 +34,33 @@ Os códigos estão no "main", vai abrir no VS Code.
 
 *O código abaixo caso vc não consiga acessar os códigos declarados no link acima.
 
-#include iostream
+    #include iostream
+    #include fstream
+    #include string
+    using namespace std;
 
-#include fstream
+    //Variáveis para controle das contas
+    const int MAX_CONTAS = 100; // é previsto um limite máximo de 100 contas
 
-#include string
+    //2.1 Dados das contas
+    int numeroConta[MAX_CONTAS]; //<-Array
+    string nomeCliente[MAX_CONTAS];
+    string cpf[MAX_CONTAS];
+    int tipoConta[MAX_CONTAS];
+    double saldo[MAX_CONTAS];
+    bool contaAtiva[MAX_CONTAS];
+    int quantidadeContas = 0; //conta quantas contas estão cadastradas; vai ter que ser somada +1
 
-using namespace std;
+    //2.2 Histórico de movimentações
+    const int MAX_MOVIMENTACOES = 500;
+    int contaMovimentacao[MAX_MOVIMENTACOES];
+    char tipoMovimentacao[MAX_MOVIMENTACOES];
+    double valorMovimentacao[MAX_MOVIMENTACOES];
+    int quantidadeMovimentacoes = 0;
 
-//Variáveis para controle das contas
+    int opcao;
 
-const int MAX_CONTAS = 100; // é previsto um limite máximo de 100 contas
-
-//2.1 Dados das contas
-
-int numeroConta[MAX_CONTAS]; //<-Array
-
-string nomeCliente[MAX_CONTAS];
-
-string cpf[MAX_CONTAS];
-
-int tipoConta[MAX_CONTAS];
-
-double saldo[MAX_CONTAS];
-
-bool contaAtiva[MAX_CONTAS];
-
-int quantidadeContas = 0; //conta quantas contas estão cadastradas; vai ter que ser somada +1
-
-//2.2 Histórico de movimentações
-
-const int MAX_MOVIMENTACOES = 500;
-
-int contaMovimentacao[MAX_MOVIMENTACOES];
-
-char tipoMovimentacao[MAX_MOVIMENTACOES];
-
-double valorMovimentacao[MAX_MOVIMENTACOES];
-
-int quantidadeMovimentacoes = 0;
-
-int opcao;
-
-void carregarContas() {
+    void carregarContas() {
 
     ifstream arquivo("contas.txt");
     
