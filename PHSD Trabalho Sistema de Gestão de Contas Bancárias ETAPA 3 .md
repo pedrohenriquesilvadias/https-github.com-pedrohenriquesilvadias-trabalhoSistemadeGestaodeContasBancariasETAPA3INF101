@@ -478,5 +478,5 @@ Os códigos estão no "main", vai abrir no VS Code.
         
     } while (opcao != 8);
     
-    return 0;
-}
+        return 0;
+    }
