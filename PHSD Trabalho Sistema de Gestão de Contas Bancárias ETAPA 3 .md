@@ -34,14 +34,14 @@ Os códigos estão no "main", vai abrir no VS Code.
 
 *O código abaixo caso vc não consiga acessar os códigos declarados no link acima.
 
-    #include iostream
-    #include fstream
-    #include string
+    #include <iostream>
+    #include <fstream>
+    #include <string>
     using namespace std;
 
     //Variáveis para controle das contas
     const int MAX_CONTAS = 100; // é previsto um limite máximo de 100 contas
-
+    
     //2.1 Dados das contas
     int numeroConta[MAX_CONTAS]; //<-Array
     string nomeCliente[MAX_CONTAS];
@@ -50,131 +50,102 @@ Os códigos estão no "main", vai abrir no VS Code.
     double saldo[MAX_CONTAS];
     bool contaAtiva[MAX_CONTAS];
     int quantidadeContas = 0; //conta quantas contas estão cadastradas; vai ter que ser somada +1
-
+    
     //2.2 Histórico de movimentações
     const int MAX_MOVIMENTACOES = 500;
     int contaMovimentacao[MAX_MOVIMENTACOES];
     char tipoMovimentacao[MAX_MOVIMENTACOES];
     double valorMovimentacao[MAX_MOVIMENTACOES];
     int quantidadeMovimentacoes = 0;
-
+    
     int opcao;
 
     void carregarContas() {
-
-    ifstream arquivo("contas.txt");
-    
-    if (!arquivo.is_open()) {
-        
-        return; // Se o arquivo não existe (1ª execução), apenas sai sem erro
-    
-    }
-
-    quantidadeContas = 0;
-    
-    string temp;
-
-    // Lê até o primeiro ';' (número da conta). Se conseguir ler, há uma linha válida
-    
-    while (getline(arquivo, temp, ';')) {
-        
-        if (temp == "") break; // Evita ler linha em branco no final do arquivo
-        
-        numeroConta[quantidadeContas] = stoi(temp);
-
-        getline(arquivo, nomeCliente[quantidadeContas], ';');
-        
-        getline(arquivo, cpf[quantidadeContas], ';');
-
-        getline(arquivo, temp, ';');
-        
-        tipoConta[quantidadeContas] = stoi(temp);
-
-        getline(arquivo, temp, ';');
-        
-        saldo[quantidadeContas] = stod(temp);
-
-        // O último campo da linha termina com quebra de linha ('\n'), não com ';'
-        
-        getline(arquivo, temp);
-        
-        contaAtiva[quantidadeContas] = stoi(temp);
-
-        quantidadeContas++;
-    }
-    arquivo.close();
-}
-
-void salvarContas() {
-    
-    ofstream arquivo("contas.txt");
-    
-    if (arquivo.is_open()) {
-        
-        for (int i = 0; i < quantidadeContas; i++) {
-            
-            arquivo << numeroConta[i] << ";"
-                    
-                    << nomeCliente[i] << ";"
-                    
-                    << cpf[i] << ";"
-                    
-                    << tipoConta[i] << ";"
-                    
-                    << saldo[i] << ";"
-                    
-                    << contaAtiva[i] << endl;
-        
+        ifstream arquivo("contas.txt");
+        if (!arquivo.is_open()) {
+            return; // Se o arquivo não existe (1ª execução), apenas sai sem erro
         }
-        
-        arquivo.close();
-    
-    }
 
-}
+        quantidadeContas = 0;
+        string temp;
 
-void carregarMovimentacoes() {
-    
-    ifstream arquivo("movimentacoes.txt");
-    
-    if (!arquivo.is_open()) {
-        
-        return;
-    
-    }
+        // Lê até o primeiro ';' (número da conta). Se conseguir ler, há uma linha válida
+        while (getline(arquivo, temp, ';')) {
+             if (temp == "") break; // Evita ler linha em branco no final do arquivo
+             numeroConta[quantidadeContas] = stoi(temp);
 
-    quantidadeMovimentacoes = 0;
-    string temp;
+             getline(arquivo, nomeCliente[quantidadeContas], ';');
+             getline(arquivo, cpf[quantidadeContas], ';');
 
-    while (getline(arquivo, temp, ';')) {
-        if (temp == "") break;
-        contaMovimentacao[quantidadeMovimentacoes] = stoi(temp);
+             getline(arquivo, temp, ';');
+             tipoConta[quantidadeContas] = stoi(temp);
 
-        getline(arquivo, temp, ';');
-        tipoMovimentacao[quantidadeMovimentacoes] = temp[0]; // Pega o caractere 'D' ou 'S'
+             getline(arquivo, temp, ';');
+             saldo[quantidadeContas] = stod(temp);
 
-        getline(arquivo, temp);
-        valorMovimentacao[quantidadeMovimentacoes] = stod(temp);
+             // O último campo da linha termina com quebra de linha ('\n'), não com ';'
+             getline(arquivo, temp);
+             contaAtiva[quantidadeContas] = stoi(temp);
 
-        quantidadeMovimentacoes++;
-    }
-    arquivo.close();
-}
-
-void salvarMovimentacoes() {
-    
-    ofstream arquivo("movimentacoes.txt");
-    if (arquivo.is_open()) {
-        for (int i = 0; i < quantidadeMovimentacoes; i++) {
-            arquivo << contaMovimentacao[i] << ";"
-                    << tipoMovimentacao[i] << ";"
-                    << valorMovimentacao[i] << endl;
+             quantidadeContas++;
         }
         arquivo.close();
     }
-}
+
+    void salvarContas() {
+        ofstream arquivo("contas.txt");
+        if (arquivo.is_open()) {
+            for (int i = 0; i < quantidadeContas; i++) {
+                 arquivo << numeroConta[i] << ";"
+                         << nomeCliente[i] << ";"
+                         << cpf[i] << ";"
+                         << tipoConta[i] << ";"
+                         << saldo[i] << ";"
+                         << contaAtiva[i] << endl;
+            }
+            arquivo.close();
+        }
+    }
+
+    void carregarMovimentacoes() {
+        ifstream arquivo("movimentacoes.txt");
+        if (!arquivo.is_open()) {
+            return;
+        }
+
+        quantidadeMovimentacoes = 0;
+        string temp;
+
+        while (getline(arquivo, temp, ';')) {
+             if (temp == "") break;
+             contaMovimentacao[quantidadeMovimentacoes] = stoi(temp);
+
+             getline(arquivo, temp, ';');
+             tipoMovimentacao[quantidadeMovimentacoes] = temp[0]; // Pega o caractere 'D' ou 'S'
+
+             getline(arquivo, temp);
+             valorMovimentacao[quantidadeMovimentacoes] = stod(temp);
+
+             quantidadeMovimentacoes++;
+       }
+       arquivo.close();
+    }
     
-int main() {
+    void salvarMovimentacoes() {
+        ofstream arquivo("movimentacoes.txt");
+        if (arquivo.is_open()) {
+            for (int i = 0; i < quantidadeMovimentacoes; i++) {
+                  arquivo << contaMovimentacao[i] << ";"
+                          << tipoMovimentacao[i] << ";"
+                          << valorMovimentacao[i] << endl;
+            }
+            arquivo.close();
+        }
+     }
+    
+ 
+    
+    int main() {
     
     carregarContas();         
     carregarMovimentacoes();
