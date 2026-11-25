@@ -9,3 +9,4 @@ a opção 8 sair. Foi usado no void carregarContas; o while (getline(arquivo, te
 getline(arquivo, cpf[quantidadeContas], ';'); getline(arquivo, temp, ';'); tipoConta[quantidadeContas] = stoi(temp); getline(arquivo, temp, ';');
 saldo[quantidadeContas] = stod(temp);
 Na Etapa 2, anderson a missão necessária era, cadastrar contas, listar contas cadastradas, consultar contas, realizar depósitos e saques.
+pedro
