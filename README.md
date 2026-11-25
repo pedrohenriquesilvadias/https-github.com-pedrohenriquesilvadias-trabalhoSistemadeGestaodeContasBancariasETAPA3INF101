@@ -24,20 +24,31 @@ Primeiro digita o nome, cpf, número de conta... e faz saques, transferências e
 Na terceira etapa, ao optar 8 e confirmar, abre uma nova aba do online GDB, com os dados dos bancários e seus dados pessoais gravados.
 
 #include <iostream>
+
 #include <fstream>
+
 #include <string>
+
 using namespace std;
 
 //Variáveis para controle das contas
+
 const int MAX_CONTAS = 100; // é previsto um limite máximo de 100 contas
     
 //2.1 Dados das contas
+
 int numeroConta[MAX_CONTAS]; //<-Array
+
 string nomeCliente[MAX_CONTAS];
+
 string cpf[MAX_CONTAS];
+
 int tipoConta[MAX_CONTAS];
+
 double saldo[MAX_CONTAS];
+
 bool contaAtiva[MAX_CONTAS];
+
 int quantidadeContas = 0; //conta quantas contas estão cadastradas; vai ter que ser somada +1
     
 //2.2 Histórico de movimentações
