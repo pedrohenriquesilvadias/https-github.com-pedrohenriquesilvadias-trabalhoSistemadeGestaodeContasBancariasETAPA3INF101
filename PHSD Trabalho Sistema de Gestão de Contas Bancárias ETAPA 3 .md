@@ -6,8 +6,6 @@ Matrícula: 28780
 
 Disciplina: INF-101 Programação de Computadores I
 
-Link de acesso: [trabalho-etapa-3-sistema-bancario.zip](https://github.com/user-attachments/files/35413663/trabalho-etapa-3-sistema-bancario.zip);
-
 Neste trabalho, descobri que deve se declarar as variáveis com arrays MAX_CONTAS E MAX_MOVIMENTAÇÕES da etapa 2 e as variáveis da etapa 3 o void salvar
 contas e movimentações na qual foi usado o "ifstream" no carregar e "ofstream" no salvar através do <fstream> antes de declarar o "int main();".
 
@@ -26,6 +24,8 @@ Primeiro digita o nome, cpf, número de conta... e faz saques, transferências e
 Na terceira etapa, ao optar 8 e confirmar, abre uma nova aba do online GDB, com os dados dos bancários e seus dados pessoais gravados.
 
 *Foi necessário a remoção das setinhas no iostream, fstream e string pois eles não apareciam na aba visualizar.
+Link de acesso: [trabalho-etapa-3-sistema-bancario.zip](https://github.com/user-attachments/files/35413663/trabalho-etapa-3-sistema-bancario.zip);
+*O código abaixo caso vc não consiga acessar os códigos declarados no link acima.
 
 #include iostream
 
