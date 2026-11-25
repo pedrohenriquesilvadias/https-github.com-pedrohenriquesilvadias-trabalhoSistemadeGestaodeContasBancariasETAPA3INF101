@@ -147,8 +147,8 @@ Os códigos estão no "main", vai abrir no VS Code.
     
     int main() {
     
-    carregarContas();         
-    carregarMovimentacoes();
+        carregarContas();         
+        carregarMovimentacoes();
     
     //MENU
     //2.3 Funcionalidades obrigatórias
