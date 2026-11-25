@@ -23,11 +23,11 @@ Primeiro digita o nome, cpf, número de conta... e faz saques, transferências e
 
 Na terceira etapa, ao optar 8 e confirmar, abre uma nova aba do online GDB, com os dados dos bancários e seus dados pessoais gravados.
 
-#include <iostream>
+#include<iostream>
 
-#include <fstream>
+#include<fstream>
 
-#include <string>
+#include<string>
 
 using namespace std;
 
@@ -167,6 +167,7 @@ void carregarMovimentacoes() {
 }
 
 void salvarMovimentacoes() {
+    
     ofstream arquivo("movimentacoes.txt");
     if (arquivo.is_open()) {
         for (int i = 0; i < quantidadeMovimentacoes; i++) {
