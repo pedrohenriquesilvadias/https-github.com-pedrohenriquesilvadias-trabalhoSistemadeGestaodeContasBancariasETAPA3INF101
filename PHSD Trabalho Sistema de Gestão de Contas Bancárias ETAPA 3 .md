@@ -6,24 +6,28 @@ Matrícula: 28780
 
 Disciplina: INF-101 Programação de Computadores I
 
-Neste trabalho, descobri que deve se declarar as variáveis com arrays MAX_CONTAS E MAX_MOVIMENTAÇÕES da etapa 2 e as variáveis da etapa 3 o void salvar
-contas e movimentações na qual foi usado o "ifstream" no carregar e "ofstream" no salvar através do <fstream> antes de declarar o "int main();".
+Neste trabalho, descobri que deve se declarar as variáveis com arrays MAX_CONTAS E MAX_MOVIMENTAÇÕES da etapa 2 e as variáveis da etapa 3 o void salvar/
+carregar contas/movimentações na qual foi usado o "ofstream" no salvar e "ifstream" no carregar através do <fstream> antes de declarar o "int main();".
 
-O salvarContas(); e o salvarMovimentações teve de ser declarados antes do break.
+O salvarContas(); e o salvarMovimentações teve de ser declarados antes do break (nos códigos declarados na etapa 2). 
 
-O arquivo.close(); serve pra gravar os arquivos depois de escolher a opção 8 sair.
+O arquivo.close(); obrigatoriamente declarado depois de quantidadeContas (=0, ++) serve para encerrar o arquivo depois de ler ou escrever os dados nele.
 
-Foi usado no void carregarContas; o while (getline(arquivo, temp, ';')), getline(arquivo, nomeCliente[quantidadeContas], ';'); getline(arquivo, cpf[quantidadeContas], ';'); getline(arquivo, temp, ';'); tipoConta[quantidadeContas] = stoi(temp); getline(arquivo, temp, ';');
-saldo[quantidadeContas] = stod(temp);
+Foi usado o void carregarContas; o while (getline(arquivo, temp, ';')), getline(arquivo, nomeCliente[quantidadeContas], ';'); getline(arquivo, cpf[quantidadeContas], ';'); getline(arquivo, temp, ';'); tipoConta[quantidadeContas] = stoi(temp); contaAtiva[quantidadeContas] = true;
+getline(arquivo, temp, ';'); saldo[quantidadeContas] = stod(temp);
 
-Na Etapa 2, a missão necessária era, cadastrar contas, listar contas cadastradas, consultar contas, realizar depósitos, saques transferências, e exibir
-o extrato.
+Na Etapa 2, a objetivo era, cadastrar contas, listar contas cadastradas, consultar contas, realizar depósitos, saques transferências, e exibir
+o extrato usando string, bool, do-while, switch opcao, for e cases, declarar novas variáveis a cada case e a variável double valor foram declarados como 
+value, valeur e elValor pois variáveis não podem se repetir.
 
-Primeiro digita o nome, cpf, número de conta... e faz saques, transferências e diversas coisas até escolher sair.
+Primeiro digita o número da conta nome, cpf, tipo da conta e saldo para cadastrar, listar, consultar, fazer depósitos, saques, transferências, emitir
+extratos e por fim sair.
 
-Na terceira etapa, ao optar 8 e confirmar, abre uma nova aba do online GDB, com os dados dos bancários e seus dados pessoais gravados.
+Na etapa 3, depois de todos de fazer todo esse processo acima e escolhido a opção 8 sair (na etapa 2), abre duas novas abas do online GDB:, a contas.txt com o número da conta, nome, conta poupança ou corrente e saldo declarados e a movimentacoes.txt com o número da conta, tipo depósito ou saque e o saldo depositado/sacado.
 
-*Foi necessário a remoção das setinhas no iostream, fstream e string pois eles não apareciam na aba visualizar.
+Depois do int main, declara carregarContas e carregarMovimentacoes antes de copiar os códigos declarados na etapa 2.
+
+*Foi necessário a remoção das setinhas (< >) no iostream, fstream e string pois eles não apareciam na aba visualizar, apareciam apenas o include.
 
 *Link de acesso: [trabalho-etapa-3-sistema-bancario.zip](https://github.com/user-attachments/files/35413663/trabalho-etapa-3-sistema-bancario.zip).
 Os códigos estão no "main", vai abrir no VS Code.
