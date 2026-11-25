@@ -52,39 +52,57 @@ bool contaAtiva[MAX_CONTAS];
 int quantidadeContas = 0; //conta quantas contas estão cadastradas; vai ter que ser somada +1
     
 //2.2 Histórico de movimentações
+
 const int MAX_MOVIMENTACOES = 500;
+
 int contaMovimentacao[MAX_MOVIMENTACOES];
+
 char tipoMovimentacao[MAX_MOVIMENTACOES];
+
 double valorMovimentacao[MAX_MOVIMENTACOES];
+
 int quantidadeMovimentacoes = 0;
     
 int opcao;
 
 void carregarContas() {
+    
     ifstream arquivo("contas.txt");
+    
     if (!arquivo.is_open()) {
+        
         return; // Se o arquivo não existe (1ª execução), apenas sai sem erro
+    
     }
 
     quantidadeContas = 0;
+    
     string temp;
 
     // Lê até o primeiro ';' (número da conta). Se conseguir ler, há uma linha válida
+    
     while (getline(arquivo, temp, ';')) {
+        
         if (temp == "") break; // Evita ler linha em branco no final do arquivo
+        
         numeroConta[quantidadeContas] = stoi(temp);
 
         getline(arquivo, nomeCliente[quantidadeContas], ';');
+        
         getline(arquivo, cpf[quantidadeContas], ';');
 
         getline(arquivo, temp, ';');
+        
         tipoConta[quantidadeContas] = stoi(temp);
 
         getline(arquivo, temp, ';');
+        
         saldo[quantidadeContas] = stod(temp);
 
         // O último campo da linha termina com quebra de linha ('\n'), não com ';'
+        
         getline(arquivo, temp);
+        
         contaAtiva[quantidadeContas] = stoi(temp);
 
         quantidadeContas++;
